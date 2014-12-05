@@ -1,0 +1,37 @@
+<%= form_for(@person_score) do |f| %>
+  <% if @person_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person_score.errors.count, "error") %> prohibited this person_score from being saved:</h2>
+
+      <ul>
+      <% @person_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.number_field :score %>
+  </div>
+  <div class="field">
+    <%= f.label :hi_score %><br>
+    <%= f.number_field :hi_score %>
+  </div>
+  <div class="field">
+    <%= f.label :create %><br>
+    <%= f.datetime_select :create %>
+  </div>
+  <div class="field">
+    <%= f.label :update %><br>
+    <%= f.datetime_select :update %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
